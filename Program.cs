@@ -93,7 +93,7 @@ namespace GetCustomerNameFromPrinter_sPlanWindow
         {
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://localhost:5000/api/Checks/"); // Replace with your API's URL
+                httpClient.BaseAddress = new Uri("http://localhost:6428/api/Checks/"); // Replace with your API's URL
                 httpClient.DefaultRequestHeaders.Accept.Clear();
                 httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
