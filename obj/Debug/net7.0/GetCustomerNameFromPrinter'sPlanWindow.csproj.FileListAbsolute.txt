@@ -23,3 +23,4 @@ C:\Users\Jeff\source\repos\GetCustomerNameFromPrinter'sPlanWindow\bin\Debug\net7
 C:\Users\Jeff\source\repos\GetCustomerNameFromPrinter'sPlanWindow\bin\Debug\net7.0\x64\leptonica-1.82.0.dll
 C:\Users\Jeff\source\repos\GetCustomerNameFromPrinter'sPlanWindow\bin\Debug\net7.0\x64\tesseract50.dll
 C:\Users\Jeff\source\repos\GetCustomerNameFromPrinter'sPlanWindow\bin\Debug\net7.0\Tesseract.dll
+C:\Users\Jeff\source\repos\GetCustomerNameFromPrinter'sPlanWindow\obj\Debug\net7.0\GetCustomerNameFromPrinter'sPlanWindow.sourcelink.json

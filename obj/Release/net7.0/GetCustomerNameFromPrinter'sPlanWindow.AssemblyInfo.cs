@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GetCustomerNameFromPrinter\'sPlanWindow")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a29a689b3427ff7c5fe3cd68204182a910eef3a")]
 [assembly: System.Reflection.AssemblyProductAttribute("GetCustomerNameFromPrinter\'sPlanWindow")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GetCustomerNameFromPrinter\'sPlanWindow")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
