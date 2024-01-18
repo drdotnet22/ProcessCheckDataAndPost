@@ -51,7 +51,7 @@ namespace GetCustomerNameFromPrinter_sPlanWindow
             IntPtr hWnd = (IntPtr)Convert.ToInt32(args);
             RECT rect;
             GetWindowRect(hWnd, out rect);
-            bounds = new System.Drawing.Rectangle(rect.Left + 129, rect.Top + 35, 900, 30);
+            bounds = new System.Drawing.Rectangle(rect.Left + 460, rect.Top + 88, 400, 17);
 
             byte[] byteFile;
             using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
@@ -62,7 +62,12 @@ namespace GetCustomerNameFromPrinter_sPlanWindow
                 }
                 ImageConverter converter = new ImageConverter();
                 byteFile = (byte[])converter.ConvertTo(bitmap, typeof(byte[]));
-
+                
+                //using(Image image = Image.FromStream(new
+                //    MemoryStream(byteFile)))
+                //{
+                //    image.Save(@"C:\Users\Jeff\Downloads\output.png", System.Drawing.Imaging.ImageFormat.Png);
+                //}
             }
 
             string dataPath = @"C:\Users\Jeff\source\repos\GetCustomerNameFromPrinter'sPlanWindow\tessdata\";
@@ -75,8 +80,14 @@ namespace GetCustomerNameFromPrinter_sPlanWindow
                     using (var page = engine.Process(img))
                     {
                         string text = page.GetText();
-                        string delimitedStr = DelimitString(text);
-                        return delimitedStr;
+                        if (text.Contains(Environment.NewLine))
+                        {
+                            return DelimitString(text);
+                        }
+                        else
+                        {
+                            return text;
+                        }
                     }
                 }
             }
@@ -84,9 +95,8 @@ namespace GetCustomerNameFromPrinter_sPlanWindow
 
         public static string DelimitString(string str)
         {
-            int index = str.IndexOf(" (");
-            string firstPart = str.Substring(0, index);
-            return firstPart;
+            string[] dString = str.Split(new string[] { Environment.NewLine }, StringSplitOptions.TrimEntries);
+            return dString[0];
         }
 
         static async Task PostCheckAsync(Check check)
