@@ -80,14 +80,7 @@ namespace GetCustomerNameFromPrinter_sPlanWindow
                     using (var page = engine.Process(img))
                     {
                         string text = page.GetText();
-                        if (text.Contains(Environment.NewLine))
-                        {
-                            return DelimitString(text);
-                        }
-                        else
-                        {
-                            return text;
-                        }
+                        return DelimitString(text);
                     }
                 }
             }
@@ -95,8 +88,13 @@ namespace GetCustomerNameFromPrinter_sPlanWindow
 
         public static string DelimitString(string str)
         {
-            string[] dString = str.Split(new string[] { Environment.NewLine }, StringSplitOptions.TrimEntries);
-            return dString[0];
+            int newlineIndex = str.IndexOf('\n');
+            if (newlineIndex != -1)
+            {
+                return str.Substring(0, newlineIndex);
+            }
+
+            return str;
         }
 
         static async Task PostCheckAsync(Check check)
